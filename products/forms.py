@@ -1,0 +1,17 @@
+from django import forms
+from .models import Product
+
+class ProductFrom(forms.Form):
+    name = forms.CharField(max_length=200, label="Nombre")
+    description = forms.CharField(max_length=200, label="Descripción")
+    price = forms.DecimalField(max_digits=200, decimal_places=2, label="Precio")
+    available = forms.BooleanField(initial=True, label="Desponible", required=False)
+    photo = forms.ImageField(label="Foto", required=False)
+
+    def save(self):
+        Product.objects.create(
+            name = self.cleaned_data['name'],
+            description = self.cleaned_data['description'],
+            available = self.cleaned_data['available'],
+            photo = self.cleaned_data['photo'],
+        )
