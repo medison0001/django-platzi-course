@@ -10,7 +10,9 @@
 
   <!-- NAVBAR -->
   <nav class="bg-white shadow-md py-4 px-8 flex justify-between items-center">
-    <h1 class="text-2xl font-bold text-yellow-700">☕ Coffee Shop</h1>
+    <a href="{% url 'list_product' %}" class="text-2xl font-bold text-yellow-700 hover:text-yellow-800 transition">
+    ☕ Coffee Shop
+    </a>
     <div>
       {% if user.is_authenticated %}
         <span class="text-gray-700 mr-4">Hola, {{ user.username }}</span>
