@@ -4,7 +4,7 @@
 {% block content %}
 <div class="flex items-center justify-center min-h-screen bg-gradient-to-br from-yellow-50 to-yellow-100">
   <div class="bg-white rounded-2xl shadow-xl p-8 w-full max-w-sm">
-    <h2 class="text-2xl font-bold text-center text-yellow-800 mb-6">Iniciar Sesión ☕</h2>
+    <h2 class="text-2xl font-bold text-center text-yellow-800 mb-6">Crear cuenta ☕</h2>
     
     <form method="post" class="space-y-6">
       {% csrf_token %}
@@ -12,18 +12,13 @@
 
       <button type="submit"
               class="w-full bg-yellow-500 hover:bg-yellow-600 text-white font-semibold py-2 rounded-xl shadow-md transition duration-200">
-        Login
+        Registrarse
       </button>
     </form>
 
     <p class="mt-6 text-center text-sm text-gray-500">
-      ¿No tienes una cuenta?
-      <a href="{% url 'register' %}" class="text-yellow-600 hover:underline">Regístrate aquí</a>
-    </p>
-
-    <p class="mt-2 text-center text-sm text-gray-500">
-      ¿Olvidaste tu contraseña?
-      {% comment %} <a href="{% url 'password_reset' %}" class="text-yellow-600 hover:underline">Recupérala aquí</a> {% endcomment %}
+      ¿Ya tienes una cuenta?
+      <a href="{% url 'login' %}" class="text-yellow-600 hover:underline">Inicia sesión</a>
     </p>
   </div>
 </div>
