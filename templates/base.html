@@ -14,8 +14,7 @@
     <div>
       {% if user.is_authenticated %}
         <span class="text-gray-700 mr-4">Hola, {{ user.username }}</span>
-        {% comment %} <a href="{% url 'mi_pedido' %}"  {% endcomment %}
-        <a href="#" 
+        <a href="{% url 'my_order' %}" 
             class="bg-yellow-400 hover:bg-yellow-500 text-white px-4 py-2 rounded-xl transition duration-150 mr-2">
             Mi pedido
         </a>
